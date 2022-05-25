@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition Review</title>
+  <style>
+    main {
+      display: inline-block;
+      
+      position: relative;
+      left: 50%;
+
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* The code below is sourced from W3Schools (https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp) */
+    /* Style the links inside the sidenav */
+    nav a {
+      position: absolute; /* Position them relative to the browser window */
+      left: -80px; /* Position them outside of the screen */
+      padding: 15px; /* 15px padding */
+      width: 100px; /* Set a specific width */
+      text-decoration: none; /* Remove underline */
+      font-size: 20px; /* Increase font size */
+      color: white; /* White text color */
+      border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+
+      /*
+        We transition our left property so that when we
+        hover the left property can be changed to allow
+        the element to show up on the screen.
+        Then, we set the duration of the transition to
+        0.5 seconds.
+        Finally, we set the timing function to ease-in-out
+        so that the transition eases in and eases out.
+        We discussed that it did not make sense to set a delay,
+        so there is no fourth property to this transition
+        property.
+      */
+      -o-transition: left 0.5s ease-in-out;
+      -moz-transition: left 0.5s ease-in-out;
+      -webkit-transition: left 0.5s ease-in-out;
+      transition: left 0.5s ease-in-out;
+    }
+
+    /* 
+      To make the element show up when hovered on, 
+      we change the left property to have a value of
+      0.
+    */
+    nav a:hover {
+      left: 0;
+    }
+    /* The about link: 20px from the top with a green background */
+    #about {
+      top: 20px;
+      background-color: #04AA6D;
+    }
+    #blog {
+      top: 80px;
+      background-color: #2196F3; /* Blue */
+    }
+    #projects {
+      top: 140px;
+      background-color: #f44336; /* Red */
+    }
+    #contact {
+      top: 200px;
+      background-color: #555 /* Light Black */
+    }
+    /* End of sourced code */
+  </style>
+</head>
+<body>
+  <!-- Start of sourced code from W3 Schools (https://www.w3schools.com/howto/howto_css_sidenav_buttons.asp) -->
+  <nav>
+    <ul>
+      <li><a href="#" id="about">About</a></li>
+      <li><a href="#" id="blog">Blog</a></li>
+      <li><a href="#" id="projects">Projects</a></li>
+      <li><a href="#" id="contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- End of sourced code -->
+  <main>
+    <h1>Transition Review</h1>
+    <p>This page is solely for reviewing transitions from the previous class day.</p>
+  </main>
+</body>
+</html>
